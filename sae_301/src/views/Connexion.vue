@@ -56,7 +56,7 @@ export default {
     async loginGithub() {
       await pb.collection("users").authWithOAuth2({ provider: "github" });
       if (pb.authStore.isValid) {
-        document.getElementById("status").innerHTML = "You are now logged in Github";
+        document.getElementById("status").innerHTML = "Vous êtes maintenant connecté avec Github";
         connected = true;
         currentUser=pb.authStore.model;
       }
@@ -74,7 +74,10 @@ export default {
 };
 </script>
 <template>
+<div class="card">
 <div style="align-items: center;">
+    <h1>Connectez-vous !</h1>
+    <div class="container">
     <div class="wrapper" id="signOut">
       <div><SignIn msg="Enter votre email pour vous connecter" /></div>
       <label>Adresse mail: </label><br />
@@ -93,6 +96,45 @@ export default {
       <p><label id="status"> Vous n'etes pas connectez </label><br /></p>
     </div>
 </div>
-  </template>
+</div>
+</div>
+</template>
 
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+  /* Ajoutez ces styles pour les boutons */
+button {
+  background-color: #220059; /* Couleur de fond */
+  border: none; /* Pas de bordure */
+  color: white; /* Couleur du texte */
+  padding: 10px 20px; /* Rembourrage intérieur */
+  text-align: center; /* Alignement du texte au centre */
+  text-decoration: none; /* Pas de soulignement */
+  display: inline-block; /* Afficher en tant qu'élément en ligne */
+  font-size: 16px; /* Taille de la police */
+  margin: 4px 2px; /* Marge extérieure */
+  cursor: pointer; /* Curseur pointeur au survol */
+  border-radius: 18px; /* Coins arrondis */
+}
 
+/* Au survol, assombrissez légèrement la couleur du bouton */
+button:hover {
+  background-color: #180049;
+}
+
+</style>

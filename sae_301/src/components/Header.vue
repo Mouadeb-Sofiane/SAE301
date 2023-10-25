@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 import { ref, computed, watch } from 'vue'
+import IconLogo from './icons/IconLogo.vue';
+import IconHome from './icons/IconHome.vue';
 
 const activeMenu = ref(false)
 
@@ -36,22 +38,22 @@ const activeMenu = ref(false)
                  </RouterLink>
             </li>
             <li class="menu-item">
-                <RouterLink class="menu-link" to="/Lunettes" @click="closeMenu">
+                <RouterLink class="menu-link" to="/lunettes" @click="closeMenu">
                     Nos lunettes
                 </RouterLink>
             </li> 
             <li class="menu-item">
-                <RouterLink class="menu-link" to="/Personnaliser" @click="closeMenu">
+                <RouterLink class="menu-link" to="/personnaliser" @click="closeMenu">
                     Personnalisez vos lunettes
                 </RouterLink>
             </li>
             <li class="menu-item">
-                <RouterLink class="menu-link" to="/Personnaliser" @click="closeMenu">
-                    <IconList /> Rechechez des ophtalmologues
+                <RouterLink class="menu-link" to="/map" @click="closeMenu">
+                    Rechercher nos ophtalmologues
                 </RouterLink>
-            </li>
-            <li class="menu-item">
-                <RouterLink class="menu-link" to="/connexion" @click="closeMenu">
+            </li> 
+            <li class="menu-item signup-btn">
+                <RouterLink class="menu-link signup-btn mr-10 ml-10 mt-5 mb-5" to="/connexion" @click="closeMenu">
                     <IconUser /> Se connecter
                 </RouterLink>
             </li> 
@@ -73,7 +75,7 @@ const activeMenu = ref(false)
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+
 }
 
 .logo img {
@@ -104,6 +106,22 @@ const activeMenu = ref(false)
   background-color: #2c0b7a; /* Couleur de surbrillance au survol */
 }
 
+.signup-btn {
+    background-color: #220059;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    text-decoration: none;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-btn:hover {
+    background-color: #2c0b7a;
+  }
 @media (max-width: 768px) {
   .header {
     flex-direction: column; /* Changez la direction du flex en colonne pour les petits écrans */
@@ -114,4 +132,6 @@ const activeMenu = ref(false)
     margin-top: 20px; /* Ajoutez un espace entre le logo et le menu pour les petits écrans */
   }
 }
+
+
 </style>
