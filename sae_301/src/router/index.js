@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
+import Connexion from '@/views/Connexion.vue'
+import Lunettes from '@/views/Lunettes.vue'
+import Map from '@/views/Map.vue'
+import Personnaliser from '@/views/Personnaliser.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +12,26 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/connexion',
+      name: 'connexion',
+      component: Connexion
+    },
+    {
+      path: '/lunettes',
+      name: 'lunettes',
+      component: Lunettes
+    }, 
+    {
+      path: '/map',
+      name: 'map',
+      component: Map
+    },
+    {
+      path: '/personnaliser',
+      name: 'personnaliser',
+      component: Personnaliser
     },
     {
       path: '/about',
