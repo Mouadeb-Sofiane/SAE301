@@ -1,5 +1,4 @@
 <script>
-import IconGithub from "../components/icons/IconGithub.vue";
 import PocketBase from 'pocketbase'
 var connected = false;
 var pocketbase_ip = "";
@@ -21,7 +20,7 @@ export default {
         );
 
       if (pb.authStore.isValid) {
-        document.getElementById("status").innerHTML = "You are now logged in";
+        document.getElementById("status").innerHTML = "Vous êtes maintenant connecté(e)";
         connected = true;
         currentUser = pb.authStore.model;
         document.getElementById("signOut").style.visibility = "hidden";
@@ -34,7 +33,7 @@ export default {
         email: document.getElementById("email").value,
         password: document.getElementById("passwd").value,
         passwordConfirm: document.getElementById("passwd").value,
-        name: "email",
+        name: email.value,
       });
       if (currentUser) {
         document.getElementById("status").innerHTML =
@@ -98,10 +97,11 @@ export default {
         <button v-on:click="login()">Se connecter</button>
       </div>
       <div>
-        <IconGithub />
-      </div>
-      <div>
-        <button v-on:click="loginGithub()" style="background-color: black;">Se connecter avec Github</button>
+        
+        <button v-on:click="loginGithub()" style="background-color: black; " class="flex items-center justify-center space-x-2 ml-[282.5px] mt-8">
+            <img src="../components/icons/IconGithub.svg" alt="github" >
+            Se connecter avec Github
+        </button>
         <p><label id="status"> TaVue la connexion </label><br /></p>
       </div>
     </div>

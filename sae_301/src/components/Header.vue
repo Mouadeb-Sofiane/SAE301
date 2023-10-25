@@ -33,11 +33,6 @@ const activeMenu = ref(false)
         >
         <ul class="nav">
             <li class="menu-item">
-                <RouterLink class="menu-link" to="/" @click="closeMenu">
-                    Accueil
-                 </RouterLink>
-            </li>
-            <li class="menu-item">
                 <RouterLink class="menu-link" to="/lunettes" @click="closeMenu">
                     Nos lunettes
                 </RouterLink>
@@ -120,7 +115,9 @@ const activeMenu = ref(false)
   }
   
   .signup-btn:hover {
-    background-color: #2c0b7a;
+    background-color: #ADC9FF;
+    color: grey;
+    border: #000;
   }
 @media (max-width: 768px) {
   .header {

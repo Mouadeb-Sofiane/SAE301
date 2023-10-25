@@ -8,10 +8,8 @@ import IconLunetteaccueilbleu from '../components/icons/IconLunetteaccueilbleu.v
 </script>
 
 <template>
-    <br>
-    <br>
-    <div style="text-align: center;">
-        <h1 style="font-size: 60px;">TaVue les lunettes qui perçoivent votre monde</h1>   
+    <div style="text-align: center;" class="mt-12">
+        <h1 class="font-bold text-3xl text-black mt-8">TaVue les lunettes qui perçoivent votre monde</h1>   
     </div>
     <br>
     <div class="container mx-auto p-8">
@@ -64,11 +62,10 @@ import IconLunetteaccueilbleu from '../components/icons/IconLunetteaccueilbleu.v
             <h2 class="font-bold  text-3xl p-4 pl-10 ">La qualité à un prix</h2>
         <div class="underline bg-black w-[400px] h-1  ">
         </div>
-            <p class="p-10 leading-relaxed text-[20px]">
+            <p class="p-10 leading-relaxed text-[20px] mb-5">
                 Chez TaVue, nous comprenons que la qualité a un prix. Nos lunettes d'une valeur exceptionnelle à 850€ représentent un investissement dans votre bien-être visuel et votre style de vie. Avec TaVue, vous investissez dans une vision claire et dans un style qui se distingue, assuré par des matériaux de première qualité et une fabrication impeccable.
                 Faites un choix qui vous distingue. Optez pour TaVue et découvrez une nouvelle dimension de la clarté visuelle et du style sophistiqué. C'est bien plus qu'une paire de lunettes, c'est un héritage de l'élégance et de la qualité.
             </p>
-            <br>
             <div>
                 <RouterLink to="/lunettes" class="signup-btn ml-72">Nos lunettes</RouterLink>
             </div>
