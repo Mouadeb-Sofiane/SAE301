@@ -1,4 +1,5 @@
 <script>
+import IconGithub from "../components/icons/IconGithub.vue";
 import PocketBase from 'pocketbase'
 var connected = false;
 var pocketbase_ip = "";
@@ -33,7 +34,7 @@ export default {
         email: document.getElementById("email").value,
         password: document.getElementById("passwd").value,
         passwordConfirm: document.getElementById("passwd").value,
-        name: "John Di",
+        name: "email",
       });
       if (currentUser) {
         document.getElementById("status").innerHTML =
@@ -74,67 +75,118 @@ export default {
 };
 </script>
 <template>
+    <br><br><br><br>
 <div class="card">
 <div style="align-items: center;">
-    <h1>Connectez-vous !</h1>
+    <div>
+        <h1 class="text-4xl font-bold text-black">Connectez-vous !</h1>
+    </div>
     <div class="container">
     <div class="wrapper" id="signOut">
       <div><SignIn msg="Enter votre email pour vous connecter" /></div>
-      <label>Adresse mail: </label><br />
+      <label style="color: black;" class="text-xl font-bold">Adresse mail: </label><br />
       <input
         type="email"
         required
         id="email"
         placeholder="username@domain.tld"
       /><br />
-      <label>Mot de passe: </label><br />
+      <label style="color: black;" class="text-xl font-bold">Mot de passe: </label><br />
       <input type="password" required id="passwd" /><br />
-      <button v-on:click="register()">S'inscrire</button>
-      <button v-on:click="login()">Se connecter</button>
-      <button v-on:click="googlelogin()">Se connecter avec Google</button>
-      <button v-on:click="loginGithub()">Se connecter avec Github</button>
-      <p><label id="status"> Vous n'etes pas connectez </label><br /></p>
+      <div class="flex align" style="gap: 50px;">
+        <button v-on:click="register()">S'inscrire</button>
+        <button v-on:click="login()">Se connecter</button>
+      </div>
+      <div>
+        <IconGithub />
+      </div>
+      <div>
+        <button v-on:click="loginGithub()" style="background-color: black;">Se connecter avec Github</button>
+        <p><label id="status"> TaVue la connexion </label><br /></p>
+      </div>
     </div>
 </div>
 </div>
 </div>
+<br><br><br><br>
 </template>
 
 <style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-}
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-    padding: 2px 16px;
-  }
-  /* Ajoutez ces styles pour les boutons */
-button {
-  background-color: #220059; /* Couleur de fond */
-  border: none; /* Pas de bordure */
-  color: white; /* Couleur du texte */
-  padding: 10px 20px; /* Rembourrage intérieur */
-  text-align: center; /* Alignement du texte au centre */
-  text-decoration: none; /* Pas de soulignement */
-  display: inline-block; /* Afficher en tant qu'élément en ligne */
-  font-size: 16px; /* Taille de la police */
-  margin: 4px 2px; /* Marge extérieure */
-  cursor: pointer; /* Curseur pointeur au survol */
-  border-radius: 18px; /* Coins arrondis */
+.align {
+  display: flex;
+  justify-content: center;
 }
 
-/* Au survol, assombrissez légèrement la couleur du bouton */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #fff, #f0f0f0);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4c51bf;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 12px 0;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
 button:hover {
-  background-color: #180049;
+  background-color: #43458b;
+}
+
+h1 {
+  font-size: 24px;
+  color: #4c51bf;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  text-align: left;
+  color: #4c51bf;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#status {
+  color: #ff6347;
+  margin-top: 12px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
 }
 
 </style>
